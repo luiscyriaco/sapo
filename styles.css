@@ -1,0 +1,1125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+
+/* styles.css */
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font
+}
+
+body {
+    background-color: #E4E6DA;
+    /* Cor de fundo em hexadecimal */
+}
+
+header {
+    height: 80px;
+    background-color: #63783D;
+    padding: 10px 10px 0px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+/* Estilos para o título no cabeçalho */
+header h1 {
+    color: white;
+    font-size: 64px;
+    font-family: Cabin Sketch;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    left: 1000px;
+
+}
+
+hr {
+    margin: 16px auto;
+}
+
+button {
+    width: 180px;
+    height: 35px;
+    background-color: #C2CFB4;
+    color: #253529;
+    border: none;
+    padding: 0px 0px;
+    margin: 0px;
+    font-family: Calibri;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px 6px 0px 0px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c2cfb4b7;
+}
+
+.sub-buttons {
+    display: none;
+}
+
+.sub-buttons.active {
+    display: block;
+    /* Mostrar a subcategoria ativa */
+}
+
+/* Estilos para a imagem do Logo */
+#logo {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    width: 96;
+    height: 109px;
+}
+
+form div {
+    display: flex;
+    gap: 16px;
+}
+
+/*Estilos de formatação da página de Pessoa Jutídica*/
+.cadastropf-section {
+    display: none;
+    background: #fafafa;
+    width: calc(100% - 20px);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid transparent;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #253529;
+    border-radius: 12px gap: 4px;
+}
+
+label input {
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 0px 10px;
+}
+
+label[for="codigo-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="codigo-pf"] input {
+    width: 77.25px;
+    height: 32px;
+}
+
+label[for="nome-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="nome-pf"] input {
+    width: 508.75px;
+    height: 32px;
+}
+
+label[for="sexo-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="sexo-pf"] select {
+    width: 293px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #D9D9D9;
+    font-size: 18px;
+    padding: 0px 8px;
+    color: #253529;
+}
+
+label[for="nascimento-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="nascimento-pf"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="naturalidade-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="naturalidade-pf"] input {
+    width: 396px;
+    height: 32px;
+}
+
+label[for="nacionalidade-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="nacionalidade-pf"] input {
+    width: 396px;
+    height: 32px;
+}
+
+label[for="estado-civil-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="estado-civil-pf"] select {
+    width: 396px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #D9D9D9;
+    font-size: 18px;
+    padding: 0px 8px;
+    color: #253529;
+}
+
+label[for="email-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="email-pf"] input {
+    width: 604px;
+    height: 32px;
+}
+
+label[for="telefone-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="telefone-pf"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="whatsapp-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="whatsapp-pf"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="pai-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="pai-pf"] input {
+    width: 508.75px;
+    height: 32px;
+}
+
+label[for="mae-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="mae-pf"] input {
+    width: 508.75px;
+    height: 32px;
+}
+
+label[for="cpf-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cpf-pf"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="titulo-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="titulo-pf"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="zona-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="zona-pf"] input {
+    width: 77.25px;
+    height: 32px;
+}
+
+label[for="secao-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="secao-pf"] input {
+    width: 77.25px;
+    height: 32px;
+}
+
+label[for="emissao-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="emissao-pf"] input {
+    width: 199.75px;
+    height: 32px;
+}
+
+label[for="pis-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="pis-pf"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="passaporte-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="passaporte-pf"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="cep-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cep-pf"] input {
+    width: 190px;
+    height: 32px;
+}
+
+label[for="endereco-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="endereco-pf"] input {
+    width: 602px;
+    height: 32px;
+}
+
+label[for="numero-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="numero-pf"] input {
+    width: 111px;
+    height: 32px;
+}
+
+label[for="complemento-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="complemento-pf"] input {
+    width: 267px;
+    height: 32px;
+}
+
+label[for="bairro-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="bairro-pf"] input {
+    width: 396px;
+    height: 32px;
+}
+
+label[for="cidade-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cidade-pf"] input {
+    width: 267px;
+    height: 32px;
+}
+
+label[for="estado-pf"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="estado-pf"] input {
+    width: 111px;
+    height: 32px;
+}
+
+
+/*Estilos de formatação da página de Pessoa Jurídica*/
+.cadastropj-section {
+    display: none;
+    background: #fafafa;
+    width: calc(100% - 20px);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid transparent;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+label[for="codigo-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="codigo-pj"] input {
+    width: 77.25px;
+    height: 32px;
+}
+
+label[for="razao-social-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="razao-social-pj"] input {
+    width: 508.75px;
+    height: 32px;
+}
+
+label[for="cnpj-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cnpj-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="inscricao-estadual-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="inscricao-estadual-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="inscricao-municipal-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="inscricao-municipal-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="data-ativacao-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="data-ativacao-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="faturamento-mensal-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="faturamento-mensal-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="ramo-atividade-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="ramo-atividade-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="contato-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="contato-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="telefone-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="telefone-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="ramal-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="ramal-pj"] input {
+    width: 61.25px;
+    height: 32px;
+}
+
+label[for="email-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="email-pj"] input {
+    width: 524.75px;
+    height: 32px;
+}
+
+label[for="nome-fantasia-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="nome-fantasia-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="cep-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cep-pj"] input {
+    width: 190px;
+    height: 32px;
+}
+
+label[for="endereco-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="endereco-pj"] input {
+    width: 602px;
+    height: 32px;
+}
+
+label[for="numero-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="numero-pj"] input {
+    width: 111px;
+    height: 32px;
+}
+
+label[for="complemento-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="complemento-pj"] input {
+    width: 267px;
+    height: 32px;
+}
+
+label[for="bairro-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="bairro-pj"] input {
+    width: 396px;
+    height: 32px;
+}
+
+label[for="cidade-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cidade-pj"] input {
+    width: 267px;
+    height: 32px;
+}
+
+label[for="estado-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="estado-pj"] input {
+    width: 111px;
+    height: 32px;
+}
+
+label[for="tempo-local-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="tempo-local-pj"] input {
+    width: 111px;
+    height: 32px;
+}
+
+label[for="codigo-banco-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="codigo-banco-pj"] input {
+    width: 111px;
+    height: 32px;
+}
+
+label[for="nome-banco-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="nome-banco-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="agencia-banco-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="agencia-banco-pj"] input {
+    width: 111px;
+    height: 32px;
+}
+
+label[for="conta-banco-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="conta-banco-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="data-abertura-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="data-abertura-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="telefone-gerente-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="telefone-gerente-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="gerente-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="gerente-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="empresa1-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="empresa1-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="contato1-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="contato1-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="telefone1-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="telefone1-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="ramal1-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="ramal1-pj"] input {
+    width: 61.25px;
+    height: 32px;
+}
+
+label[for="empresa2-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="empresa2-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="contato2-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="contato2-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="telefone2-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="telefone2-pj"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="ramal2-pj"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="ramal2-pj"] input {
+    width: 61.25px;
+    height: 32px;
+}
+
+/*Estilos de formatação da página de Funcionário*/
+.funcionario-section {
+    display: none;
+    background: #fafafa;
+    width: calc(100% - 20px);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid transparent;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+label[for="codigo-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="codigo-fun"] input {
+    width: 77.25px;
+    height: 32px;
+}
+
+label[for="nome-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="nome-fun"] input {
+    width: 508.75px;
+    height: 32px;
+}
+
+label[for="data-admissao-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="data-admissao-fun"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="data-demissao-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="data-demissao-fun"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="departamento-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label[for="departamento-fun"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="carteira-trabalho-fun"] input {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label[for="carteira-trabalho-fun"] input {
+    width: 138.5px;
+    height: 32px;
+}
+
+label[for="serie-fun"] input {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label[for="serie-fun"] input {
+    width: 61.25px;
+    height: 32px;
+}
+
+label[for="titulo-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="titulo-fun"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="zona-fun"] input {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label[for="zona-fun"] input {
+    width: 61.25px;
+    height: 32px;
+}
+
+label[for="secao-fun"] input {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label[for="secao-fun"] input {
+    width: 61.25px;
+    height: 32px;
+}
+
+label[for="nascimento-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="nascimento-fun"] input {
+    width: 215.75px;
+    height: 32px;
+}
+
+label[for="pis-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="pis-fun"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="cpf-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cpf-fun"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="departamento-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="departamento-fun"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="funcao-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="funcao-fun"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="sexo-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="sexo-fun"] select {
+    width: 293px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #D9D9D9;
+    font-size: 18px;
+    padding: 0px 8px;
+    color: #253529;
+}
+
+label[for="cep-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cep-fun"] input {
+    width: 190px;
+    height: 32px;
+}
+
+label[for="endereco-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="endereco-fun"] input {
+    width: 602px;
+    height: 32px;
+}
+
+label[for="numero-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="numero-fun"] input {
+    width: 111px;
+    height: 32px;
+}
+
+label[for="complemento-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="complemento-fun"] input {
+    width: 267px;
+    height: 32px;
+}
+
+label[for="bairro-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="bairro-fun"] input {
+    width: 396px;
+    height: 32px;
+}
+
+label[for="cidade-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cidade-fun"] input {
+    width: 267px;
+    height: 32px;
+}
+
+label[for="estado-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="estado-fun"] input {
+    width: 111px;
+    height: 32px;
+}
+
+label[for="dependente1-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="dependente1-fun"] input {
+    width: 508.75px;
+    height: 32px;
+}
+
+label[for="cpf1-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="cpf1-fun"] input {
+    width: 293px;
+    height: 32px;
+}
+
+label[for="idade1-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="idade1-fun"] input {
+    width: 111px;
+    height: 32px;
+}
+
+label[for="parentesco1-fun"] {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="parentesco1-fun"] input {
+    width: 267px;
+    height: 32px;
+}
+
+.nota-fiscal-section {
+    display: flex;
+    background: #fafafa;
+    width: calc(100% - 20px);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid transparent;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 16px;
+    justify-content: center;
+}
+
+.nota-fiscal {
+    width: 354.25px;
+    height: 145px;
+    background: #fafafa;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cliente-nota {
+    width: 620px;
+    height: 145px;
+    background: #fafafa;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 990.25;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    /* Espaço entre tabelas, se necessário */
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+input[type="text"],
+input[type="number"] {
+    box-sizing: border-box;
+    /* Inclui padding e bordas no cálculo da largura */
+    padding: 8px;
+    /* Espaçamento interno */
+    border: 1px solid #ccc;
+    /* Cor e estilo da borda */
+    border-radius: 4px;
+    /* Bordas arredondadas */
+    font-size: 14px;
+    /* Tamanho da fonte */
+}

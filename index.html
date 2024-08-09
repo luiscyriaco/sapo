@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>SAPO</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="script.js" defer></script>
+
+
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="assets/sapo_logo.webp" alt="Imagem Flutuante" />
+        <h1>S.A.P.O</h1>
+        <button type="button" onclick="toggleSubButtons('sub-btn1')">
+            Cadastros
+        </button>
+        <button type="button" onclick="toggleSubButtons('sub-btn2')">
+            Emissões
+        </button>
+        <button type="button" onclick="toggleSubButtons('curriculo')">
+            Trabalhe Conosco
+        </button>
+        <div id="sub-btn1" class="sub-buttons">
+            <button type="button" onclick="showSection('cadastro-pf')">
+                Cadastro PF
+            </button>
+            <button type="button" onclick="showSection('cadastro-pj')">
+                Cadastro PJ
+            </button>
+            <button type="button" onclick="showSection('funcionario')">
+                Funcionário
+            </button>
+        </div>
+        <div id="sub-btn2" class="sub-buttons">
+            <button type="button" onclick="showSection('nota-fiscal')">
+                Nota Fiscal
+            </button>
+            <button type="button" onclick="showSection('recibo')">Recibo</button>
+            <button type="button" onclick="showSection('ordem-servico')">
+                Ordem de Serviço
+            </button>
+            <button type="button" onclick="showSection('ordem-compra')">
+                Ordem de Compra
+            </button>
+        </div>
+    </header>
+    <main>
+        <div id="curriculo" class="content-section" style="display: none">
+            <h2>Trabalhe Conosco</h2>
+            <p>Detalhes sobre oportunidades de trabalho...</p>
+        </div>
+        <div id="cadastro-pf" class="content-section cadastropf-section" style="display: none">
+            <form class="codigo-pf" action="/submit-cadastro-pf" method="post">
+                <div>
+                    <label for="codigo-pf">Código
+                        <input type="text" id="codigo-pf" name="codigo-pf" required />
+                    </label>
+                    <label for="nome-pf">Nome
+                        <input type="text" id="nome-pf" name="nome-pf" required placeholder="Digite seu nome" />
+                    </label>
+                    <label for="sexo-pf">Sexo
+                        <select id="sexo-pf" name="sexo-pf" required>
+                            <option value="" Selecionar selected>Selecione...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </label>
+                    <label for="nascimento-pf">Data de Nascimento
+                        <input type="date" id="nascimento-pf" name="nascimento-pf" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="naturalidade-pf">Naturalidade
+                        <input type="text" id="naturalidade-pf" name="naturalidade-pf" required />
+                    </label>
+                    <label for="nacionalidade-pf">Nacionalidade
+                        <input type="text" id="nacionalidade-pf" name="nacionalidade-pf" required />
+                    </label>
+                    <label for="estado-civil-pf">Estado Civil
+                        <select id="estado-civil-pf" name="estado-civil-pf" required>
+                            <option value="" Selecionar selected>Selecione...</option>
+                            <option value="solteiro">Solteiro</option>
+                            <option value="casado">Casado</option>
+                            <option value="divorciado">Divorciado</option>
+                            <option value="viuvo">Viúvo</option>
+                        </select>
+                    </label>
+
+                </div>
+                <div>
+
+                    <label for="email-pf">Email
+                        <input type="email" id="email-pf" name="email-pf" required />
+                    </label>
+                    <label for="telefone-pf">Telefone
+                        <input type="tel" id="telefone-pf" name="telefone-pf" />
+                    </label>
+                    </label>
+                    <label for="whatsapp-pf">Whatsapp
+                        <input type="tel" id="whatsapp-pf" name="whatsapp-pf" />
+                    </label>
+                </div>
+                <div>
+                    <label for="pai-pf">Pai
+                        <input type="text" id="pai-pf" name="pai-pf" required />
+                    </label>
+                    <label for="mae-pf">Mãe
+                        <input type="text" id="mae-pf" name="mae-pf" required />
+                    </label>
+                </div>
+                <hr>
+                <div>
+                    <label for="cpf-pf">CPF
+                        <input type="text" id="cpf-pf" name="cpf-pf" required />
+                    </label>
+                    <label for="titulo-pf">Título de Eleitor
+                        <input type="text" id="titulo-pf" name="titulo-pf" required />
+                    </label>
+                    <label for="zona-pf">zona
+                        <input type="text" id="zona-pf" name="zona-pf" required />
+                    </label>
+                    <label for="secao-pf">Seção
+                        <input type="text" id="secao-pf" name="secao-pf" required />
+                    </label>
+                    <label for="emissao-pf">Emissão
+                        <input type="date" id="emissao-pf" name="emissao-pf" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="pis-pf">PIS
+                        <input type="text" id="pis-pf" name="pis-pf" required />
+                    </label>
+                    <label for="passaporte-pf">Passaporte
+                        <input type="text" id="passaporte-pf" name="passaporte-pf" required />
+                    </label>
+
+                </div>
+                <hr>
+                <div>
+                    <label for="cep-pf">CEP
+                        <input type="text" id="cep-pf" name="cep-pf" required />
+                    </label>
+                    <label for="endereco-pf">Endereço
+                        <input type="text" id="endereco-pf" name="endereco-pf" required />
+                    </label>
+                    <label for="numero-pf">Número
+                        <input type="text" id="numero-pf" name="numero-pf" required />
+                    </label>
+                    <label for="complemento-pf">Complemento
+                        <input type="text" id="complemento-pf" name="complemento-pf" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="bairro-pf">Bairro
+                        <input type="text" id="bairro-pf" name="bairro-pf" required />
+                    </label>
+                    <label for="cidade-pf">Cidade
+                        <input type="text" id="cidade-pf" name="cidade-pf" required />
+                    </label>
+                    <label for="estado-pf">Estado
+                        <input type="text" id="estado-pf" name="estado-pf" required />
+                    </label>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div id="cadastro-pj" class="content-section cadastropj-section" style="display: none">
+            <form action="/submit-cadastro-pj" method="post">
+                <div>
+                    <label for="codigo-pj">Código
+                        <input type="text" id="codigo-pj" name="codigo-pj" required />
+                    </label>
+                    <label for="razao-social-pj">Razão Social
+                        <input type="text" id="razao-social-pj" name="razao-social-pf" required />
+                    </label>
+                    <label for="cnpj-pj">CNPJ
+                        <input type="text" id="cnpj-pj" name="cnpj-pj" required />
+                    </label>
+                    <label for="inscricao-estadual-pj">Inscrição Estadual
+                        <input type="text" id="inscricao-estadual-pj" name="inscricao-estadual-pj" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="inscricao-municipal-pj">Inscrição Municipal
+                        <input type="text" id="inscricao-municipal-pj" name="inscricao-municipal-pj" required />
+                    </label>
+                    <label for="data-ativacao-pj">Data de Ativação
+                        <input type="date" id="data-ativacao-pj" name="data-ativacao-pj" required />
+                    </label>
+                    <label for="faturamento-mensal-pj">Faturamento Mensal
+                        <input type="text" id="faturamento-mensal-pj" name="faturamento-mensal-pj" required />
+                    </label>
+                    <label for="ramo-atividade-pj">Ramo de Atividade
+                        <input type="text" id="ramo-atividade-pj" name="ramo-atividade-pj" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="contato-pj">Contato
+                        <input type="text" id="contato-pj" name="contato-pj" required />
+                    </label>
+                    <label for="telefone-pj">Telefone
+                        <input type="tel" id="telefone-pj" name="telefone-pj" required />
+                    </label>
+                    <label for="ramal-pj">Ramal
+                        <input type="text" id="ramal-pj" name="ramal-pj" required />
+                    </label>
+                    <label for="email-pj">Email
+                        <input type="text" id="email-pj" name="email-pj" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="nome-fantasia-pj">Nome Fantasia
+                        <input type="text" id="nome-fantasia-pj" name="nome-fantasia-pj" required />
+                    </label>
+                </div>
+                <hr>
+                <div>
+                    <label for="cep-pj">CEP
+                        <input type="text" id="cep-pj" name="cep-pj" required />
+                    </label>
+                    <label for="endereco-pj">Endereço
+                        <input type="text" id="endereco-pj" name="endereco-pj" required />
+                    </label>
+                    <label for="numero-pj">Número
+                        <input type="text" id="numero-pj" name="numero-pj" required />
+                    </label>
+                    <label for="complemento-pj">Complemento
+                        <input type="text" id="complemento-pj" name="complemento-pj" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="bairro-pj">Bairro
+                        <input type="text" id="bairro-pj" name="bairro-pj" required />
+                    </label>
+                    <label for="cidade-pj">Cidade
+                        <input type="text" id="cidade-pj" name="cidade-pj" required />
+                    </label>
+                    <label for="estado-pj">Estado
+                        <input type="text" id="estado-pj" name="estado-pj" required />
+                    </label>
+                    <label for="tempo-local-pj">Tempo Local
+                        <input type="text" id="tempo-local-pj" name="tempo-local-pj" required />
+                    </label>
+                </div>
+                <hr>
+                <div>
+                    <label for="codigo-banco-pj">Código Banco
+                        <input type="text" id="codigo-banco-pj" name="codigo-banco-pj" required />
+                    </label>
+                    <label for="nome-banco-pj">Nome Banco
+                        <input type="text" id="nome-banco-pj" name="nome-banco-pj" required />
+                    </label>
+                    <label for="agencia-banco-pj">Agência
+                        <input type="text" id="agencia-banco-pj" name="agencia-banco-pj" required />
+                    </label>
+                    <label for="conta-banco-pj">Conta
+                        <input type="text" id="conta-banco-pj" name="conta-banco-pj" required />
+                    </label>
+                    <label for="data-abertura-pj">Data Abertura
+                        <input type="date" id="data-abertura-pj" name="data-abertura-pj" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="telefone-gerente-pj">Telefone
+                        <input type="tel" id="telefone-gerente-pj" name="telefone-gerente-pj" required />
+                    </label>
+                    <label for="gerente-pj">Gerente
+                        <input type="text" id="gerente-pj" name="gerente-pj" required />
+                    </label>
+                </div>
+                <hr>
+                <div>
+                    <label for="empresa1-pj">Empresa
+                        <input type="text" id="empresa1-pj" name="empresa1-pj" required />
+                    </label>
+                    <label for="contato1-pj">Contato
+                        <input type="text" id="contato1-pj" name="contato1-pj" required />
+                    </label>
+                    <label for="telefone1-pj">Telefone
+                        <input type="text" id="telefone1-pj" name="telefone1-pj" required />
+                    </label>
+                    <label for="ramal1-pj">Ramal
+                        <input type="text" id="ramal1-pj" name="ramal1-pj" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="empresa2-pj">Empresa
+                        <input type="text" id="empresa2-pj" name="empresa2-pj" required />
+                    </label>
+                    <label for="contato2-pj">Contato
+                        <input type="text" id="contato2-pj" name="contato2-pj" required />
+                    </label>
+                    <label for="telefone2-pj">Telefone
+                        <input type="text" id="telefone2-pj" name="telefone2-pj" required />
+                    </label>
+                    <label for="ramal2-pj">Ramal
+                        <input type="text" id="ramal2-pj" name="ramal2-pj" required />
+                    </label>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div id="funcionario" class="content-section funcionario-section" style="display: none">
+            <form action="/funcionario" method="post">
+                <div>
+                    <label for="codigo-fun">Código
+                        <input type="text" id="codigo-fun" name="codigo-fun" required />
+                    </label>
+                    <label for="nome-fun">Nome
+                        <input type="text" id="nome-fun" name="nome-fun" required />
+                    </label>
+                    <label for="data-admissao-fun">Data Admissão
+                        <input type="date" id="data-admissao-fun" name="data-admissao-fun" required />
+                    </label>
+                    <label for="data-demissao-fun">Data Demissão
+                        <input type="date" id="data-demissao-fun" name="data-demissao-fun" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="departamento-fun">Departamento
+                        <input type="text" id="departamento-fun" name="departamento-fun" required />
+                    </label>
+                    <label for="carteira-trabalho-fun">Carteira Trabalho
+                        <input type="text" id="carteira-trabalho-fun" name="carteira-trabalho-fun" required />
+                    </label>
+                    <label for="serie-fun">Série
+                        <input type="text" id="serie-fun" name="serie-fun" required />
+                    </label>
+                    <label for="titulo-fun">Titulo
+                        <input type="text" id="titulo-fun" name="titulo-fun" required />
+                    </label>
+                    <label for="zona-fun">Zona
+                        <input type="text" id="zona-fun" name="zona-fun" required />
+                    </label>
+                    <label for="secao-fun">Seção
+                        <input type="text" id="secao-fun" name="secao-fun" required />
+                    </label>
+                    <label for="nascimento-fun">Data de Nascimento
+                        <input type="date" id="nascimento-fun" name="nascimento-fun" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="pis-fun">PIS
+                        <input type="text" id="pis-fun" name="pis-fun" required />
+                    </label>
+                    <label for="cpf-fun">CPF
+                        <input type="text" id="cpf-fun" name="cpf-fun" required />
+                    </label>
+                    <label for="departamento-fun">Departamento
+                        <input type="text" id="departamento-fun" name="departamento-fun" required />
+                    </label>
+                    <label for="funcao-fun">Função
+                        <input type="text" id="funcao-fun" name="funcao-fun" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="sexo-fun">Sexo
+                        <select id="sexo-fun" name="sexo-fun" required>
+                            <option value="" Selecionar selected>Selecione...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </label>
+                </div>
+                <hr>
+                <div>
+                    <label for="cep-fun">CEP
+                        <input type="text" id="cep-fun" name="cep-fun" required />
+                    </label>
+                    <label for="endereco-fun">Endereço
+                        <input type="text" id="endereco-fun" name="endereco-fun" required />
+                    </label>
+                    <label for="numero-fun">Número
+                        <input type="text" id="numero-fun" name="numero-fun" required />
+                    </label>
+                    <label for="complemento-fun">Complemento
+                        <input type="text" id="complemento-fun" name="complemento-fun" required />
+                    </label>
+                </div>
+                <div>
+                    <label for="bairro-fun">Bairro
+                        <input type="text" id="bairro-fun" name="bairro-fun" required />
+                    </label>
+                    <label for="cidade-fun">Cidade
+                        <input type="text" id="cidade-fun" name="cidade-fun" required />
+                    </label>
+                    <label for="estado-fun">Estado
+                        <input type="text" id="estado-fun" name="estado-fun" required />
+                    </label>
+                </div>
+                <hr>
+                <div>
+                    <label for="dependente1-fun">Dependente
+                        <input type="text" id="dependente1-fun" name="dependente1-fun" required />
+                    </label>
+                    <label for="cpf1-fun">CPF
+                        <input type="text" id="cpf1-fun" name="cpf1-fun" required />
+                    </label>
+                    <label for="idade1-fun">Idade
+                        <input type="text" id="idade1-fun" name="idade1-fun" required />
+                    </label>
+                    <label for="parentesco1-fun">Parentesco
+                        <input type="text" id="parentesco1-fun" name="parentesco1-fun" required />
+                    </label>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div id="nota-fiscal" class="content-section nota-fiscal-section" style="display: none">
+            <br>
+            <br>
+            <br>
+            <hr>
+            <div class="nota-fiscal-section">
+                <div id="nota-fiscal" class="nota-fiscal">
+                    Nota Fiscal
+                    Emissor: Instituto Eurofarma
+                    CNPJ: 14.367.309/0001-42 IE: 284.192.431.902
+                    Data:
+                    Endereço: Rua Professor Irineu Chaluppe
+                </div>
+                <div id="cliente-nota" class="cliente-nota">
+                    Cliente
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Unidade</th>
+                        <th>Quantidade</th>
+                        <th>Valor Unitário</th>
+                        <th>Valor Item</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Preenchendo 10 linhas de dados -->
+                    <tr>
+                        <td><input type="text" name="codigo_1"></td>
+                        <td><input type="text" name="descricao_1"></td>
+                        <td><input type="text" name="unidade_1"></td>
+                        <td><input type="text" name="quantidade_1"></td>
+                        <td><input type="text" name="valor_1"></td>
+                        <td><input type="text" name="valor_item_1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="codigo_2"></td>
+                        <td><input type="text" name="descricao_2"></td>
+                        <td><input type="text" name="unidade_2"></td>
+                        <td><input type="text" name="quantidade_2"></td>
+                        <td><input type="text" name="valor_2"></td>
+                        <td><input type="text" name="valor_item_2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="codigo_3"></td>
+                        <td><input type="text" name="descricao_3"></td>
+                        <td><input type="text" name="unidade_3"></td>
+                        <td><input type="text" name="quantidade_3"></td>
+                        <td><input type="text" name="valor_3"></td>
+                        <td><input type="text" name="valor_item_3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="codigo_4"></td>
+                        <td><input type="text" name="descricao_4"></td>
+                        <td><input type="text" name="unidade_4"></td>
+                        <td><input type="text" name="quantidade_4"></td>
+                        <td><input type="text" name="valor_4"></td>
+                        <td><input type="text" name="valor_item_4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="codigo_5"></td>
+                        <td><input type="text" name="descricao_5"></td>
+                        <td><input type="text" name="unidade_5"></td>
+                        <td><input type="text" name="quantidade_5"></td>
+                        <td><input type="text" name="valor_5"></td>
+                        <td><input type="text" name="valor_item_5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="codigo_6"></td>
+                        <td><input type="text" name="descricao_6"></td>
+                        <td><input type="text" name="unidade_6"></td>
+                        <td><input type="text" name="quantidade_6"></td>
+                        <td><input type="text" name="valor_6"></td>
+                        <td><input type="text" name="valor_item_6"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="codigo_7"></td>
+                        <td><input type="text" name="descricao_7"></td>
+                        <td><input type="text" name="unidade_7"></td>
+                        <td><input type="text" name="quantidade_7"></td>
+                        <td><input type="text" name="valor_7"></td>
+                        <td><input type="text" name="valor_item_7"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="codigo_8"></td>
+                        <td><input type="text" name="descricao_8"></td>
+                        <td><input type="text" name="unidade_8"></td>
+                        <td><input type="text" name="quantidade_8"></td>
+                        <td><input type="text" name="valor_8"></td>
+                        <td><input type="text" name="valor_item_8"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="codigo_9"></td>
+                        <td><input type="text" name="descricao_9"></td>
+                        <td><input type="text" name="unidade_9"></td>
+                        <td><input type="text" name="quantidade_9"></td>
+                        <td><input type="text" name="valor_9"></td>
+                        <td><input type="text" name="valor_item_9"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="codigo_10"></td>
+                        <td><input type="text" name="descricao_10"></td>
+                        <td><input type="text" name="unidade_10"></td>
+                        <td><input type="text" name="quantidade_10"></td>
+                        <td><input type="text" name="valor_10"></td>
+                        <td><input type="text" name="valor_item_10"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="recibo" class="content-section" style="display: none">
+            <h2>Recibo</h2>
+            <p>Giovana Chata...</p>
+        </div>
+        <div id="ordem-servico" class="content-section" style="display: none">
+            <h2>Ordem de Serviço</h2>
+            <p>Detalhes sobre Ordem de Serviço...</p>
+        </div>
+        <div id="ordem-compra" class="content-section" style="display: none">
+            <h2>Ordem de Compra</h2>
+            <p>Detalhes sobre Ordem de Compra...</p>
+        </div>
+    </main>
+
+</body>
+
+</html>

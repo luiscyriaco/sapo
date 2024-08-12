@@ -17,14 +17,13 @@ body {
 
 header {
     height: 80px;
+    display: flex;
+    flex-direction: column;
     background-color: #63783D;
-    padding: 10px 10px 0px 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    padding: 10px;
     position: relative;
 }
 
-/* Estilos para o título no cabeçalho */
 header h1 {
     color: white;
     font-size: 64px;
@@ -33,7 +32,7 @@ header h1 {
     padding: 0;
     position: absolute;
     top: 10px;
-    left: 1000px;
+    left: 980px;
 
 }
 
@@ -41,36 +40,71 @@ hr {
     margin: 16px auto;
 }
 
+.botoes {
+    margin-top: auto;
+    display: flex;
+}
+
+/* Estilo base para os botões */
 button {
     width: 180px;
     height: 35px;
     background-color: #C2CFB4;
     color: #253529;
     border: none;
-    padding: 0px 0px;
+    padding: 0px;
     margin: 0px;
     font-family: Calibri;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 6px 6px 0px 0px;
-    transition: background-color 0.3s ease;
+    border-radius: 6px 6px 0 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
     background-color: #c2cfb4b7;
 }
 
+button.active-main {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid #388E3C;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .sub-buttons {
     display: none;
+    margin: 0px;
+    padding: 0px;
+    border: none;
 }
 
 .sub-buttons.active {
     display: block;
-    /* Mostrar a subcategoria ativa */
 }
 
-/* Estilos para a imagem do Logo */
+
+.sub-buttons button {
+    width: 140px;
+    height: 25px;
+    font-family: Calibri;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #253529;
+    border: none;
+    border-radius: 0px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.sub-buttons button.active-sub {
+    background-color: #4CAF50;
+    color: #fefefe;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 #logo {
     position: fixed;
     top: 10px;
@@ -1061,19 +1095,33 @@ label[for="parentesco1-fun"] input {
     width: calc(100% - 20px);
     max-width: 1300px;
     margin: 0 auto;
-    padding: 20px;
-    border: 5px solid transparent;
+    padding: 0px;
+    border: none;
     border-radius: 0 0 8px 8px;
     box-sizing: border-box;
     position: relative;
-    gap: 16px;
     justify-content: center;
+    gap: 16px 0px 0px 0px;
 }
 
 .nota-fiscal {
     width: 354.25px;
     height: 145px;
-    background: #fafafa;
+    margin: 8px;
+    color: #253529;
+    background-color: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cliente-nota-section {
+    width: 522px;
+    height: 145px;
+    margin: 8px;
+    background-color: #ffffff;
     border: 1px solid #D9D9D9;
     border-radius: 8px;
     box-sizing: border-box;
@@ -1082,9 +1130,289 @@ label[for="parentesco1-fun"] input {
 }
 
 .cliente-nota {
-    width: 620px;
-    height: 145px;
+    display: flex;
+}
+
+label[for="cliente-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="cliente-nota"] input {
+    width: 285px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="tipo-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="tipo-nota"] select {
+    width: 95px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+    margin-bottom: 6px;
+}
+
+.cnpj-nota-section {
+    display: flex;
+}
+
+label[for="cnpj-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="cnpj-nota"] input {
+    width: 140px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="ie-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="ie-nota"] input {
+    width: 115px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="im-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="im-nota"] input {
+    width: 115px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+.endereco-nota-section {
+    display: flex;
+}
+
+label[for="endereco-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="endereco-nota"] input {
+    width: 213px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="n-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="n-nota"] input {
+    width: 60px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="complemento-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="complemento-nota"] input {
+    width: 100px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+.cidade-nota-section {
+    display: flex;
+}
+
+label[for="bairro-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="bairro-nota"] input {
+    width: 140px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="cidade-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="cidade-nota"] input {
+    width: 120px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="cep-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="cep-nota"] input {
+    width: 83px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh;*/
+    padding: 0px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 8px;
+}
+
+th,
+td {
+    padding: 0px;
+    text-align: left;
+}
+
+th {
+    height: 32px;
+    text-align: center;
+    color: #253529;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+}
+
+.col-codigo input {
+    width: 61.25px;
+}
+
+.col-descricao input {
+    width: 491px;
+}
+
+.col-unidade input {
+    width: 61.25px;
+}
+
+.col-quantidade input {
+    width: 61.25px;
+}
+
+.col-unitario input {
+    width: 107.875px;
+}
+
+.col-total-item input {
+    width: 107.875px;
+}
+
+input[type="text"],
+input[type="number"] {
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.footer-nota-section {
+    display: flex;
     background: #fafafa;
+    width: calc(100% - 20px);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0px;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: center;
+    gap: 16px 0px 0px 0px;
+}
+
+.assinatura-nota {
+    width: 522px;
+    height: 145px;
+    margin: 8px;
+    background-color: #ffffff;
     border: 1px solid #D9D9D9;
     border-radius: 8px;
     box-sizing: border-box;
@@ -1092,34 +1420,707 @@ label[for="parentesco1-fun"] input {
     box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
 }
 
-table {
-    width: 990.25;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    /* Espaço entre tabelas, se necessário */
-}
-
-th,
-td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f4f4f4;
-}
-
-input[type="text"],
-input[type="number"] {
+.total-nota {
+    width: 354.25px;
+    height: 145px;
+    margin: 8px;
+    color: #253529;
+    background-color: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
     box-sizing: border-box;
-    /* Inclui padding e bordas no cálculo da largura */
-    padding: 8px;
-    /* Espaçamento interno */
-    border: 1px solid #ccc;
-    /* Cor e estilo da borda */
-    border-radius: 4px;
-    /* Bordas arredondadas */
+    display: flex;
+    padding: 0px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icms-container {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+#icms-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
     font-size: 14px;
-    /* Tamanho da fonte */
+    color: #253529;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    text-align: center;
+}
+
+.icms-label {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #253529;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+#icms-input:focus+.icms-label,
+#icms-input:not(:placeholder-shown)+.icms-label {
+    top: 9px;
+    font-size: 10px;
+    color: #253529;
+}
+
+.ipi-container {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+#ipi-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #253529;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    text-align: center;
+}
+
+.ipi-label {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #253529;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+#ipi-input:focus+.ipi-label,
+#ipi-input:not(:placeholder-shown)+.ipi-label {
+    top: 10px;
+    font-size: 10px;
+    color: #253529;
+}
+
+.iss-container {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+#iss-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #253529;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    text-align: center;
+}
+
+.iss-label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #253529;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+#iss-input:focus+.iss-label,
+#iss-input:not(:placeholder-shown)+.iss-label {
+    top: 10px;
+    font-size: 10px;
+    color: #253529;
+}
+
+.total-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 40px;
+}
+
+label[for="subtotal-nota"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="subtotal-nota"] input {
+    width: 155px;
+    height: 20px;
+    color: #253529;
+    font-weight: bold;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="icmstotal-nota"] {
+    display: flex;
+    font-size: 12px;
+}
+
+label[for="icmstotal-nota"] input {
+    width: 195px;
+    height: 16px;
+    color: #253529;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="ipitotal-nota"] {
+    display: flex;
+    font-size: 12px;
+}
+
+label[for="ipitotal-nota"] input {
+    width: 210px;
+    height: 16px;
+    color: #253529;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="isstotal-nota"] {
+    display: flex;
+    font-size: 12px;
+}
+
+label[for="isstotal-nota"] input {
+    width: 208px;
+    height: 16px;
+    color: #253529;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+label[for="total-nota"] {
+    display: flex;
+    font-size: 20px;
+}
+
+label[for="total-nota"] input {
+    width: 164px;
+    height: 24px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #253529;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 6px;
+}
+
+.ordem-servico-section {
+    display: flex;
+    align-items: center;
+    background: #fafafa;
+    width: calc(100% - 20px);
+    max-width: 1300px;
+    margin: 0 auto;
+    border: 5px solid transparent;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: center;
+    gap: 16px;
+}
+
+.ordem-servico-section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+    width: calc(100% - 20px);
+    max-width: 1300px;
+    margin: 0 auto;
+    border: 5px solid transparent;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: center;
+    gap: 16px;
+}
+
+
+.cliente-ordem-servico {
+    width: 354.25px;
+    height: 145px;
+    color: #253529;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+label[for="codigo-ordem-servico"] input {
+    width: 65.25px;
+    height: 32px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+label[for="cliente-ordem-servico"] {
+    display: flex;
+    font-size: 16px;
+}
+
+label[for="cliente-ordem-servico"] input {
+    width: 602px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+.endereco-ordem {
+    display: flex;
+}
+
+label[for="endereco-ordem-servico"] {
+    display: flex;
+}
+
+label[for="endereco-ordem-servico"] input {
+    width: 180px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+label[for="cep-ordem-servico"] {
+    display: flex;
+}
+
+label[for="cep-ordem-servico"] input {
+    width: 84px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+.cnpj-ordem {
+    display: flex;
+}
+
+label[for="cnpj-ordem-servico"] {
+    display: flex;
+}
+
+label[for="cnpj-ordem-servico"] input {
+    width: 140px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+label[for="telefone-ordem-servico"] {
+    display: flex;
+}
+
+label[for="telefone-ordem-servico"] input {
+    width: 100px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+label[for="email-ordem-servico"] {
+    display: flex;
+}
+
+label[for="email-ordem-servico"] input {
+    width: 200px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+.descricao-ordem-servico {
+    display: table-column;
+}
+
+.descricao-ordem-servico {
+    width: 354.25px;
+    height: 145px;
+    color: #253529;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+label[for="equipamento-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="equipamento-ordem-servico"] input {
+    width: 200px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 4px;
+}
+
+label[for="marca-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="marca-ordem-servico"] input {
+    width: 253px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 4px;
+}
+
+label[for="modelo-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="modelo-ordem-servico"] input {
+    width: 241px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 4px;
+}
+
+label[for="servico-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="servico-ordem-servico"] input {
+    width: 244px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 4px;
+}
+
+
+.diagnostico-ordem-servico {
+    display: flex;
+    width: 724.5px;
+    height: 145px;
+    color: #253529;
+    font-size: 20px;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.textarea-diagnostico {
+    width: 100%;
+    max-width: 600px;
+    height: 105px;
+    font-size: 20px;
+    padding: 0px 10px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    resize: vertical;
+    overflow: auto;
+}
+
+.solucao-ordem-servico {
+    display: flex;
+    width: 724.5px;
+    height: 145px;
+    color: #253529;
+    font-size: 20px;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.textarea-solucao {
+    width: 100%;
+    max-width: 600px;
+    height: 105px;
+    font-size: 20px;
+    padding: 0px 10px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    resize: vertical;
+    overflow: auto;
+}
+
+.contato-ordem-servico {
+    width: 354.25px;
+    height: 145px;
+    color: #253529;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contato-servico-section {
+    display: table-column;
+}
+
+.contato-servico-section {
+    width: 354.25px;
+    height: 145px;
+    color: #253529;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+label[for="data-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="data-ordem-servico"] input {
+    width: 210px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 4px;
+}
+
+label[for="contato-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="contato-ordem-servico"] input {
+    width: 245px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 4px;
+}
+
+label[for="tecnico-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="tecnico-ordem-servico"] input {
+    width: 249px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 4px;
+}
+
+label[for="total-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="total-ordem-servico"] input {
+    width: 268px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 4px;
+}
+
+
+.assinatura-servico-section {
+    display: table-column;
+}
+
+.assinatura-servico-section {
+    width: 354.25px;
+    height: 145px;
+    color: #253529;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+label[for="tecnico-assinatura-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="tecnico-assinatura-ordem-servico"] input {
+    width: 249px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 30px;
+}
+
+label[for="cliente-assinatura-ordem-servico"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="cliente-assinatura-ordem-servico"] input {
+    width: 268px;
+    height: 25px;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 4px;
 }

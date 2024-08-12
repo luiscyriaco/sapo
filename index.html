@@ -34,38 +34,50 @@
     <header>
         <img id="logo" src="assets/sapo_logo.webp" alt="Imagem Flutuante" />
         <h1>S.A.P.O</h1>
-        <button type="button" onclick="toggleSubButtons('sub-btn1')">
-            Cadastros
-        </button>
-        <button type="button" onclick="toggleSubButtons('sub-btn2')">
-            Emissões
-        </button>
-        <button type="button" onclick="toggleSubButtons('curriculo')">
-            Trabalhe Conosco
-        </button>
-        <div id="sub-btn1" class="sub-buttons">
-            <button type="button" onclick="showSection('cadastro-pf')">
-                Cadastro PF
-            </button>
-            <button type="button" onclick="showSection('cadastro-pj')">
-                Cadastro PJ
-            </button>
-            <button type="button" onclick="showSection('funcionario')">
-                Funcionário
-            </button>
+        <div>
+            <div class="botoes">
+                <button type="button" onclick="toggleSubButtons('sub-btn1')">
+                    Cadastros
+                </button>
+                <button type="button" onclick="toggleSubButtons('sub-btn2')">
+                    Emissões
+                </button>
+                <button type="button" onclick="toggleSubButtons('curriculo')">
+                    Trabalhe Conosco
+                </button>
+            </div>
+            <div>
+                <div id="sub-btn1" class="sub-buttons">
+                    <button type="button" onclick="showSection('cadastro-pf'); activateSubButton(this)">
+                        Cadastro PF
+                    </button>
+                    <button type="button" onclick="showSection('cadastro-pj'); activateSubButton(this)">
+                        Cadastro PJ
+                    </button>
+                    <button type="button" onclick="showSection('funcionario'); activateSubButton(this)">
+                        Funcionário
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div id="sub-btn2" class="sub-buttons">
+                    <button type="button" onclick="showSection('nota-fiscal'); activateSubButton(this)">
+                        Nota Fiscal
+                    </button>
+                    <button type="button" onclick="showSection('recibo'); activateSubButton(this)">
+                        Recibo
+                    </button>
+                    <button type="button" onclick="showSection('ordem-servico'); activateSubButton(this)">
+                        Ordem de Serviço
+                    </button>
+                    <button type="button" onclick="showSection('ordem-compra'); activateSubButton(this)">
+                        Ordem de Compra
+                    </button>
+                </div>
+            </div>
         </div>
-        <div id="sub-btn2" class="sub-buttons">
-            <button type="button" onclick="showSection('nota-fiscal')">
-                Nota Fiscal
-            </button>
-            <button type="button" onclick="showSection('recibo')">Recibo</button>
-            <button type="button" onclick="showSection('ordem-servico')">
-                Ordem de Serviço
-            </button>
-            <button type="button" onclick="showSection('ordem-compra')">
-                Ordem de Compra
-            </button>
         </div>
+
     </header>
     <main>
         <div id="curriculo" class="content-section" style="display: none">
@@ -444,113 +456,315 @@
                     Data:
                     Endereço: Rua Professor Irineu Chaluppe
                 </div>
-                <div id="cliente-nota" class="cliente-nota">
-                    Cliente
+                <div id="cliente-nota-section" class="cliente-nota-section">
+                    <div class="cliente-nota">
+                        <label for="cliente-nota">cliente
+                            <input type="text" id="cliente-nota" name="cliente-nota" required />
+                        </label>
+                        <label for="tipo-nota">Tipo
+                            <select id="tipo-nota" name="tipo-nota" required>
+                                <option value="" Selecionar selected>Selecione...</option>
+                                <option value="venda">Venda</option>
+                                <option value="servico">Serviço</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="cnpj-nota-section">
+                        <label for="cnpj-nota">CNPJ
+                            <input type="text" id="cnpj-nota" name="cnpj-nota" required />
+                        </label>
+                        <label for="ie-nota">IE
+                            <input type="text" id="ie-nota" name="ie-nota" required />
+                        </label>
+                        <label for="im-nota">CCM
+                            <input type="text" id="im-nota" name="im-nota" required />
+                        </label>
+                    </div>
+                    <div class="endereco-nota-section">
+                        <label for="endereco-nota">end
+                            <input type="text" id="endereco-nota" name="endereco-nota" required />
+                        </label>
+                        <label for="n-nota">nº
+                            <input type="text" id="n-nota" name="n-nota" required />
+                        </label>
+                        <label for="complemento-nota">comp
+                            <input type="text" id="complemento-nota" name="complemento-nota" required />
+                        </label>
+                    </div>
+                    <div class="cidade-nota-section">
+                        <label for="bairro-nota">bairro
+                            <input type="text" id="bairro-nota" name="bairro-nota" required />
+                        </label>
+                        <label for="cidade-nota">cidade
+                            <input type="text" id="cidade-nota" name="cidade-nota" required />
+                        </label>
+                        <label for="cep-nota">CEP
+                            <input type="text" id="cep-nota" name="cep-nota" required />
+                        </label>
+                    </div>
                 </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Descrição</th>
-                        <th>Unidade</th>
-                        <th>Quantidade</th>
-                        <th>Valor Unitário</th>
-                        <th>Valor Item</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Preenchendo 10 linhas de dados -->
-                    <tr>
-                        <td><input type="text" name="codigo_1"></td>
-                        <td><input type="text" name="descricao_1"></td>
-                        <td><input type="text" name="unidade_1"></td>
-                        <td><input type="text" name="quantidade_1"></td>
-                        <td><input type="text" name="valor_1"></td>
-                        <td><input type="text" name="valor_item_1"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="codigo_2"></td>
-                        <td><input type="text" name="descricao_2"></td>
-                        <td><input type="text" name="unidade_2"></td>
-                        <td><input type="text" name="quantidade_2"></td>
-                        <td><input type="text" name="valor_2"></td>
-                        <td><input type="text" name="valor_item_2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="codigo_3"></td>
-                        <td><input type="text" name="descricao_3"></td>
-                        <td><input type="text" name="unidade_3"></td>
-                        <td><input type="text" name="quantidade_3"></td>
-                        <td><input type="text" name="valor_3"></td>
-                        <td><input type="text" name="valor_item_3"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="codigo_4"></td>
-                        <td><input type="text" name="descricao_4"></td>
-                        <td><input type="text" name="unidade_4"></td>
-                        <td><input type="text" name="quantidade_4"></td>
-                        <td><input type="text" name="valor_4"></td>
-                        <td><input type="text" name="valor_item_4"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="codigo_5"></td>
-                        <td><input type="text" name="descricao_5"></td>
-                        <td><input type="text" name="unidade_5"></td>
-                        <td><input type="text" name="quantidade_5"></td>
-                        <td><input type="text" name="valor_5"></td>
-                        <td><input type="text" name="valor_item_5"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="codigo_6"></td>
-                        <td><input type="text" name="descricao_6"></td>
-                        <td><input type="text" name="unidade_6"></td>
-                        <td><input type="text" name="quantidade_6"></td>
-                        <td><input type="text" name="valor_6"></td>
-                        <td><input type="text" name="valor_item_6"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="codigo_7"></td>
-                        <td><input type="text" name="descricao_7"></td>
-                        <td><input type="text" name="unidade_7"></td>
-                        <td><input type="text" name="quantidade_7"></td>
-                        <td><input type="text" name="valor_7"></td>
-                        <td><input type="text" name="valor_item_7"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="codigo_8"></td>
-                        <td><input type="text" name="descricao_8"></td>
-                        <td><input type="text" name="unidade_8"></td>
-                        <td><input type="text" name="quantidade_8"></td>
-                        <td><input type="text" name="valor_8"></td>
-                        <td><input type="text" name="valor_item_8"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="codigo_9"></td>
-                        <td><input type="text" name="descricao_9"></td>
-                        <td><input type="text" name="unidade_9"></td>
-                        <td><input type="text" name="quantidade_9"></td>
-                        <td><input type="text" name="valor_9"></td>
-                        <td><input type="text" name="valor_item_9"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="codigo_10"></td>
-                        <td><input type="text" name="descricao_10"></td>
-                        <td><input type="text" name="unidade_10"></td>
-                        <td><input type="text" name="quantidade_10"></td>
-                        <td><input type="text" name="valor_10"></td>
-                        <td><input type="text" name="valor_item_10"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead class="tabela-titulo">
+                        <tr>
+                            <th class="col-codigo">Código</th>
+                            <th class="col-descricao">Descrição</th>
+                            <th class="col-unidade">Uni</th>
+                            <th class="col-quantidade">QTD</th>
+                            <th class="col-unitario">Valor Unitário</th>
+                            <th class="col-total-item">Valor Item</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_1"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_1"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_1"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_1"></td>
+                            <td class="col-unitario"><input type="text" name="valor_1"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_1"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_2"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_2"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_2"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_2"></td>
+                            <td class="col-unitario"><input type="text" name="valor_2"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_3"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_3"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_3"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_3"></td>
+                            <td class="col-unitario"><input type="text" name="valor_3"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_3"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_4"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_4"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_4"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_4"></td>
+                            <td class="col-unitario"><input type="text" name="valor_4"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_4"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_5"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_5"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_5"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_5"></td>
+                            <td class="col-unitario"><input type="text" name="valor_5"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_5"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_6"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_6"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_6"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_6"></td>
+                            <td class="col-unitario"><input type="text" name="valor_6"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_6"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_7"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_7"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_7"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_7"></td>
+                            <td class="col-unitario"><input type="text" name="valor_7"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_7"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_8"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_8"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_8"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_8"></td>
+                            <td class="col-unitario"><input type="text" name="valor_8"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_8"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_9"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_9"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_9"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_9"></td>
+                            <td class="col-unitario"><input type="text" name="valor_9"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_9"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-codigo"><input type="text" name="codigo_10"></td>
+                            <td class="col-descricao"><input type="text" name="descricao_10"></td>
+                            <td class="col-unidade"><input type="text" name="unidade_10"></td>
+                            <td class="col-quantidade"><input type="text" name="quantidade_10"></td>
+                            <td class="col-unitario"><input type="text" name="valor_10"></td>
+                            <td class="col-total-item"><input type="text" name="valor_item_10"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer-nota-section">
+                <div id="assinatura-nota" class="assinatura-nota">
+
+                </div>
+                <div id="total-nota" class="total-nota">
+                    <div>
+                        <div class="icms-container">
+                            <input type="text" id="icms-input" name="icms" required />
+                            <label for="icms-label" class="icms-label">%ICMS</label>
+                        </div>
+                        <div class="ipi-container">
+                            <input type="text" id="ipi-input" name="ipi" required />
+                            <label for="ipi-label" class="ipi-label">%IPI</label>
+                        </div>
+                        <div class="iss-container">
+                            <input type="text" id="iss-input" name="iss" required />
+                            <label for="iss-label" class="iss-label">%ISS</label>
+                        </div>
+                    </div>
+                    <div class="total-container">
+                        <label for="subtotal-nota">Sub Total
+                            <input type="text" id="subtotal-nota" name="subtotal-nota" required />
+                        </label>
+                        <label for="icmstotal-nota">ICMS
+                            <input type="text" id="icmstotal-nota" name="icmstotal-nota" required />
+                        </label>
+                        <label for="ipitotal-nota">IPI
+                            <input type="text" id="ipitotal-nota" name="ipitotal-nota" required />
+                        </label>
+                        <label for="isstotal-nota">ISS
+                            <input type="text" id="isstotal-nota" name="isstotal-nota" required />
+                        </label>
+                        <label for="total-nota">TOTAL
+                            <input type="text" id="total-nota" name="total-nota" required />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <div id="recibo" class="content-section" style="display: none">
             <h2>Recibo</h2>
             <p>Giovana Chata...</p>
         </div>
         <div id="ordem-servico" class="content-section" style="display: none">
-            <h2>Ordem de Serviço</h2>
-            <p>Detalhes sobre Ordem de Serviço...</p>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <div class="ordem-servico-section">
+                <div id="cliente-ordem-servico" class="cliente-ordem-servico">
+                    <div>
+                        <label for="codigo-ordem-servico">Ordem de Serviço:
+                            <input type="text" id="codigo-ordem-servico" name="codigo-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div>
+                        <label for="cliente-ordem-servico">Cliente:
+                            <input type="text" id="cliente-ordem-servico" name="cliente-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div class=endereco-ordem>
+                        <label for="endereco-ordem-servico">End:
+                            <input type="text" id="endereco-ordem-servico" name="endereco-ordem-servico" required />
+                        </label>
+                        <label for="cep-ordem-servico">CEP:
+                            <input type="text" id="cep-ordem-servico" name="cep-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div class="cnpj-ordem">
+                        <label for="cnpj-ordem-servico">CNPJ:
+                            <input type="text" id="cnpj-ordem-servico" name="cnpj-ordem-servico" required />
+                        </label>
+                        <label for="telefone-ordem-servico">Fone:
+                            <input type="text" id="telefone-ordem-servico" name="telefone-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div>
+                        <label for="email-ordem-servico">E-mail:
+                            <input type="text" id="email-ordem-servico" name="email-ordem-servico" required />
+                        </label>
+                    </div>
+                </div>
+                <div id="descricao-ordem-servico" class="descricao-ordem-servico">
+                    <div>
+                        <label for="equipamento-ordem-servico">Equipamento:
+                            <input type="text" id="equipamento-ordem-servico" name="equipamento-ordem-servico"
+                                required />
+                        </label>
+                    </div>
+                    <div>
+                        <label for="marca-ordem-servico">Marca:
+                            <input type="text" id="marca-ordem-servico" name="marca-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div><label for="modelo-ordem-servico">Modelo:
+                            <input type="text" id="modelo-ordem-servico" name="modelo-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div><label for="servico-ordem-servico">Servico:
+                            <input type="text" id="servico-ordem-servico" name="servico-ordem-servico" required />
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="ordem-servico-section2">
+                <div id="diagnostico-ordem-servico" class="diagnostico-ordem-servico">
+                    <b>Diagnóstico: </b>
+                    <textarea class="textarea-diagnostico" oninput="autoResize(this)"></textarea>
+                    <script>
+                        function autoResize(textarea) {
+                            textarea.style.height = 'auto'; // Remove a altura atual
+                            textarea.style.height = (textarea.scrollHeight) + 'px'; // Define a altura para o conteúdo
+                        }
+                    </script>
+                </div>
+                <div id="solucao-ordem-servico" class="solucao-ordem-servico">
+                    <b>Solução: </b>
+                    <textarea class="textarea-solucao oninput=" autoResize(this)"></textarea>
+                    <script>
+                        function autoResize(textarea) {
+                            textarea.style.height = 'auto'; // Remove a altura atual
+                            textarea.style.height = (textarea.scrollHeight) + 'px'; // Define a altura para o conteúdo
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="ordem-servico-section">
+                <div id="contato-ordem-servico" class="contato-ordem-servico">
+                    <div>
+                        <label for="data-ordem-servico">Data Serviço:
+                            <input type="text" id="data-ordem-servico" name="data-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div>
+                        <label for="contato-ordem-servico">Contato:
+                            <input type="text" id="contato-ordem-servico" name="contato-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div>
+                        <label for="tecnico-ordem-servico">Técnico:
+                            <input type="text" id="tecnico-ordem-servico" name="tecnico-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div>
+                        <label for="total-ordem-servico">Total:
+                            <input type="text" id="total-ordem-servico" name="total-ordem-servico" required />
+                        </label>
+                    </div>
+                </div>
+                <div id="assinatura-servico-section" class="assinatura-servico-section">
+                    <div>
+                        <label for="tecnico-assinatura-ordem-servico">Técnico:
+                            <input type="text" id="tecnico-assinatura-ordem-servico"
+                                name="tecnico-assinatura-ordem-servico" required />
+                        </label>
+                    </div>
+                    <div>
+                        <label for="cliente-assinatura-ordem-servico">Cliente:
+                            <input type="text" id="cliente-assinatura-ordem-servico"
+                                name="cliente-assinatura-ordem-servico" required />
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="ordem-compra" class="content-section" style="display: none">
             <h2>Ordem de Compra</h2>

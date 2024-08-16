@@ -1,15 +1,37 @@
+document.addEventListener('DOMContentLoaded', () => {
+    function setInitialState() {
+        const initialButtonId = 'sub-btn1';
+        const initialSubButtonId = 'cadastro-pf';
+
+        const initialMainButton = document.querySelector(`button[onclick="toggleSubButtons('${initialButtonId}')"]`);
+        if (initialMainButton) {
+            initialMainButton.classList.add('active-main');
+        }
+
+        const initialSubButtons = document.getElementById(initialButtonId);
+        if (initialSubButtons) {
+            initialSubButtons.classList.add('active');
+        }
+
+        const initialSubButton = initialSubButtons.querySelector(`button[onclick="showSection('cadastro-pf'); activateSubButton(this)"]`);
+        if (initialSubButton) {
+            initialSubButton.classList.add('active-sub');
+        }
+
+        showSection('cadastro-pf');
+    }
+
+    setInitialState();
+});
+
 function toggleSubButtons(id) {
-    // Seleciona todos os elementos com a classe 'sub-buttons'
     const allSubButtons = document.querySelectorAll('.sub-buttons');
-    // Seleciona todos os botões principais
     const allMainButtons = document.querySelectorAll('button[type="button"]');
 
-    // Remove a classe 'active-main' de todos os botões principais
     allMainButtons.forEach(button => {
         button.classList.remove('active-main');
     });
 
-    // Remove a classe 'active' de todos os sub-botões
     allSubButtons.forEach(subButtons => {
         subButtons.classList.remove('active');
         subButtons.querySelectorAll('button').forEach(button => {
@@ -17,18 +39,14 @@ function toggleSubButtons(id) {
         });
     });
 
-    // Verifica se o ID clicado é "curriculo"
     if (id === 'curriculo') {
-        // Mostra a seção correspondente ao "curriculo"
         document.getElementById('curriculo').style.display = 'block';
     } else {
-        // Seleciona o submenu correspondente ao ID clicado
         const currentSubButtons = document.getElementById(id);
         if (currentSubButtons) {
             currentSubButtons.classList.add('active');
         }
 
-        // Marca o botão principal como ativo
         const activeButton = document.querySelector(`button[onclick="toggleSubButtons('${id}')"]`);
         if (activeButton) {
             activeButton.classList.add('active-main');
@@ -37,30 +55,62 @@ function toggleSubButtons(id) {
 }
 
 function showSection(sectionId) {
-    // Seleciona todas as seções de conteúdo
     const sections = document.querySelectorAll('.content-section');
 
-    // Oculta todas as seções de conteúdo
     sections.forEach(section => {
         section.style.display = 'none';
     });
 
-    // Mostra a seção selecionada
     const selectedSection = document.getElementById(sectionId);
     if (selectedSection) {
-        selectedSection.style.display = 'block';
+        selectedSection.style.display = 'flex';
     }
 }
 
-// Função para ativar o sub-botão clicado
 function activateSubButton(button) {
-    // Remove a classe 'active-sub' de todos os sub-botões
     document.querySelectorAll('.sub-buttons button').forEach(btn => {
         btn.classList.remove('active-sub');
     });
 
-    // Adiciona a classe 'active-sub' ao sub-botão clicado
     if (button) {
         button.classList.add('active-sub');
     }
+}
+
+let dependenteCount = 1;
+
+function addDependente() {
+    dependenteCount++;
+    const container = document.getElementById('dependentes-container');
+    const newDependente = document.createElement('div');
+    newDependente.className = 'dependente-item';
+    newDependente.id = `dependente-${dependenteCount}`;
+    newDependente.innerHTML = `
+        <label for="dependente${dependenteCount}-fun">Dependente
+            <input type="text" id="dependente${dependenteCount}-fun" name="dependente${dependenteCount}-fun" class="dependente-input dependente-input-field" required />
+        </label>
+        <label for="cpf${dependenteCount}-fun">CPF
+            <input type="text" id="cpf${dependenteCount}-fun" name="cpf${dependenteCount}-fun" class="cpf-input cpf-input-field" required />
+        </label>
+        <label for="idade${dependenteCount}-fun">Idade
+            <input type="text" id="idade${dependenteCount}-fun" name="idade${dependenteCount}-fun" class="idade-input idade-input-field" required />
+        </label>
+        <label for="parentesco${dependenteCount}-fun">Parentesco
+            <select type="text" id="parentesco1-fun" name="parentesco1-fun"
+                                    class="parentesco-input parentesco-input-field" required />
+                                <option value="" Selecionar selected>Selecione...</option>
+                                <option value="conjuge">Cônjuge</option>
+                                <option value="filhoate18">Filho até 18 anos</option>
+                                <option value="filhouniversitario">Filho até 24 anos Universitário</option>
+                                <option value="filhopcd">Filho PCD</option>
+                                </select>
+        </label>
+        <span class="remove-dependente" onclick="removeDependente(this)">❌</span>
+    `;
+    container.appendChild(newDependente);
+}
+
+function removeDependente(element) {
+    const container = document.getElementById('dependentes-container');
+    container.removeChild(element.parentElement);
 }

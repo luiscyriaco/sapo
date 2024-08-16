@@ -16,12 +16,10 @@ body {
 }
 
 header {
+    width: 100%;
     height: 80px;
-    display: flex;
-    flex-direction: column;
     background-color: #63783D;
-    padding: 10px;
-    position: relative;
+    padding: 0px 10px;
 }
 
 header h1 {
@@ -33,28 +31,73 @@ header h1 {
     position: absolute;
     top: 10px;
     left: 980px;
-
 }
 
 hr {
-    margin: 16px auto;
+    margin: 32px auto;
 }
 
-.botoes {
-    margin-top: auto;
+
+main {
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinha o conteúdo ao topo */
+    width: 100%;
 }
 
-/* Estilo base para os botões */
+.formularios {
+    width: 1280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.barra-botoes {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-buttons-section {
+    width: 100%;
+    background: #63783D;
+}
+
+.sub-buttons {
+    display: none;
+    /* Adiciona borda inferior vermelha */
+
+}
+
+.sub-buttons.active {
+    display: flex;
+    flex-direction: row;
+}
+
+.content-section {
+    display: none;
+    /* Inicialmente escondido */
+    width: 100%;
+    padding: 20px;
+    /* Adiciona padding para o conteúdo */
+    background: #fafafa;
+    border: 5px solid transparent;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+}
+
+.content-section.active {
+    display: flex;
+    /* Mostra o conteúdo ativo */
+}
+
 button {
     width: 180px;
     height: 35px;
     background-color: #C2CFB4;
     color: #253529;
     border: none;
-    padding: 0px;
-    margin: 0px;
-    font-family: Calibri;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -67,42 +110,30 @@ button:hover {
 }
 
 button.active-main {
-    background-color: #4CAF50;
+    background-color: #63783D;
     color: white;
-    border: 2px solid #388E3C;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.sub-buttons {
-    display: none;
-    margin: 0px;
-    padding: 0px;
-    border: none;
-}
-
-.sub-buttons.active {
-    display: block;
-}
-
-
 .sub-buttons button {
-    width: 140px;
-    height: 25px;
-    font-family: Calibri;
+    width: 160px;
+    height: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
-    background-color: #4CAF50;
+    background-color: #63783D;
     color: #253529;
-    border: none;
-    border-radius: 0px;
+    border-radius: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
     box-sizing: border-box;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.0);
 }
 
 .sub-buttons button.active-sub {
-    background-color: #4CAF50;
+    /*background-color: #285a2a;*/
     color: #fefefe;
     border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    border-bottom: 4px solid #599427;
 }
 
 #logo {
@@ -123,15 +154,12 @@ form div {
 .cadastropf-section {
     display: none;
     background: #fafafa;
-    width: calc(100% - 20px);
-    max-width: 1300px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 20px;
-    border: 5px solid transparent;
     border-top: none;
     border-radius: 0 0 8px 8px;
     box-sizing: border-box;
-    position: relative;
 }
 
 label {
@@ -144,6 +172,7 @@ label {
 label input {
     border: 1px solid #D9D9D9;
     border-radius: 4px;
+    color: #253529;
     font-size: 18px;
     padding: 0px 10px;
 }
@@ -423,8 +452,7 @@ label[for="estado-pf"] input {
 .cadastropj-section {
     display: none;
     background: #fafafa;
-    width: calc(100% - 20px);
-    max-width: 1300px;
+    max-width: 1280 px;
     margin: 0 auto;
     padding: 20px;
     border: 5px solid transparent;
@@ -798,8 +826,7 @@ label[for="ramal2-pj"] input {
 .funcionario-section {
     display: none;
     background: #fafafa;
-    width: calc(100% - 20px);
-    max-width: 1300px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 20px;
     border: 5px solid transparent;
@@ -1049,64 +1076,126 @@ label[for="estado-fun"] input {
     height: 32px;
 }
 
-label[for="dependente1-fun"] {
+.dependentes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.dependente-item label {
     display: flex;
     flex-direction: column;
 }
 
-label[for="dependente1-fun"] input {
+
+/* Estilos para o input de Dependente */
+.dependente-input-field {
     width: 508.75px;
     height: 32px;
+    border: 1px solid #D9D9D9;
+    color: #253529;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 14px;
 }
 
-label[for="cpf1-fun"] {
-    display: flex;
-    flex-direction: column;
-}
-
-label[for="cpf1-fun"] input {
-    width: 293px;
+/* Estilos para o input de CPF */
+.cpf-input-field {
+    width: 273px;
     height: 32px;
+    border: 1px solid #D9D9D9;
+    color: #253529;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 14px;
 }
 
-label[for="idade1-fun"] {
-    display: flex;
-    flex-direction: column;
-}
-
-label[for="idade1-fun"] input {
+.idade-input-field {
     width: 111px;
     height: 32px;
+    border: 1px solid #D9D9D9;
+    color: #253529;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 14px;
 }
 
-label[for="parentesco1-fun"] {
-    display: flex;
-    flex-direction: column;
-}
-
-label[for="parentesco1-fun"] input {
+.parentesco-input-field {
     width: 267px;
     height: 32px;
+    border: 1px solid #D9D9D9;
+    color: #253529;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.add-dependente {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #ffffff00;
+    color: #599427;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    border: none;
+    background-color: #ffffff00;
+    color: #82c543;
+}
+
+.remove-dependente {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #F44336;
+    font-size: 18px;
+}
+
+.remove-dependente:hover {
+    color: #C62828;
 }
 
 .nota-fiscal-section {
     display: flex;
+    flex-direction: column;
     background: #fafafa;
-    width: calc(100% - 20px);
-    max-width: 1300px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0px;
     border: none;
     border-radius: 0 0 8px 8px;
     box-sizing: border-box;
-    position: relative;
     justify-content: center;
     gap: 16px 0px 0px 0px;
+}
+
+.header-nota-fiscal {
+    display: flex;
+    justify-content: center;
 }
 
 .nota-fiscal {
     width: 354.25px;
     height: 145px;
+    flex-direction: column;
     margin: 8px;
     color: #253529;
     background-color: #ffffff;
@@ -1117,7 +1206,81 @@ label[for="parentesco1-fun"] input {
     box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
 }
 
+label[for="codigo-nota-fiscal"] input {
+    width: 65.25px;
+    height: 32px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+label[for="emissor-nota-fiscal"] {
+    display: flex;
+}
+
+label[for="emissor-nota-fiscal"] input {
+    width: 250px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+
+.cnpj-nota {
+    display: flex;
+}
+
+label[for="cnpj-emissor-nota-fiscal"] {
+    display: flex;
+}
+
+label[for="cnpj-emissor-nota-fiscal"] input {
+    width: 140px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+label[for="ie-emissor-nota-fiscal"] {
+    display: flex;
+}
+
+label[for="ie-emissor-nota-fiscal"] input {
+    width: 120px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+label[for="data-emissao-nota-fiscal"] {
+    display: flex;
+}
+
+label[for="data-emissao-nota-fiscal"] input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+label[for="data-emissao-nota-fiscal"] input {
+    width: 130px;
+    height: 20px;
+    color: #253529;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    outline: none;
+}
+
+
 .cliente-nota-section {
+    display: flex;
+    flex-direction: column;
     width: 522px;
     height: 145px;
     margin: 8px;
@@ -1403,7 +1566,6 @@ input[type="number"] {
     border: none;
     border-radius: 0 0 8px 8px;
     box-sizing: border-box;
-    position: relative;
     justify-content: center;
     gap: 16px 0px 0px 0px;
 }
@@ -1658,25 +1820,19 @@ label[for="total-nota"] input {
 
 .ordem-servico-section {
     display: flex;
-    align-items: center;
-    background: #fafafa;
-    width: calc(100% - 20px);
-    max-width: 1300px;
-    margin: 0 auto;
-    border: 5px solid transparent;
-    box-sizing: border-box;
-    position: relative;
-    justify-content: center;
-    gap: 16px;
-}
-
-.ordem-servico-section2 {
-    display: flex;
     flex-direction: column;
+    background: #fafafa;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+}
+
+.header-ordem-servico {
+    display: flex;
     align-items: center;
     background: #fafafa;
-    width: calc(100% - 20px);
-    max-width: 1300px;
     margin: 0 auto;
     border: 5px solid transparent;
     box-sizing: border-box;
@@ -1684,7 +1840,6 @@ label[for="total-nota"] input {
     justify-content: center;
     gap: 16px;
 }
-
 
 .cliente-ordem-servico {
     width: 354.25px;
@@ -1895,6 +2050,29 @@ label[for="servico-ordem-servico"] input {
     margin-bottom: 4px;
 }
 
+.body-ordem-servico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+    margin: 0 auto;
+    border: 5px solid transparent;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: center;
+    gap: 16px;
+}
+
+.ordem-servico-section {
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+}
 
 .diagnostico-ordem-servico {
     display: flex;
@@ -1952,6 +2130,18 @@ label[for="servico-ordem-servico"] input {
     box-sizing: border-box;
     resize: vertical;
     overflow: auto;
+}
+
+.footer-ordem-servico {
+    display: flex;
+    align-items: center;
+    background: #fafafa;
+    margin: 0 auto;
+    border: 5px solid transparent;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: center;
+    gap: 16px;
 }
 
 .contato-ordem-servico {
@@ -2066,7 +2256,6 @@ label[for="total-ordem-servico"] input {
     margin-bottom: 4px;
 }
 
-
 .assinatura-servico-section {
     display: table-column;
 }
@@ -2123,4 +2312,240 @@ label[for="cliente-assinatura-ordem-servico"] input {
     outline: none;
     border-bottom: 1px solid #D9D9D9;
     margin-bottom: 4px;
+}
+
+.ordem-compra-section {
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+}
+
+.header-ordem-compra {
+    display: flex;
+    width: 724.5px;
+    height: 145px;
+    color: #253529;
+    font-size: 20px;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    gap: 16px;
+}
+
+.emissor-ordem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 354.25px;
+    height: 145px;
+    color: #253529;
+    font-size: 20px;
+    background: #ffffff;
+    padding: 10px;
+    border: 1px solid #f50c0c;
+    border-radius: 8px;
+}
+
+label[for="emissor-ordem-compra"] input {
+    width: 200px;
+    height: 25px;
+    color: #253529;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid red;
+    padding: 10px 20px;
+    outline: none;
+}
+
+label[for="endereco-emissor-ordem-compra"] input {
+    width: 200px;
+    height: 25px;
+    color: #253529;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid red;
+    padding: 10px 20px;
+    outline: none;
+}
+
+label[for="cidade-emissor-ordem-compra"] input {
+    width: 164px;
+    height: 25px;
+    color: #253529;
+    text-align: right;
+    background: #ffffff;
+    border: 1px solid red;
+    padding: 10px 5px;
+    outline: none;
+}
+
+label[for="estado-emissor-ordem-compra"] input {
+    width: 30px;
+    height: 25px;
+    color: #253529;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid red;
+    padding: 10px 5px;
+    outline: none;
+}
+
+label[for="cep-emissor-ordem-compra"] input {
+    width: 200px;
+    height: 25px;
+    color: #253529;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid red;
+    padding: 10px 20px;
+    outline: none;
+}
+
+.status-ordem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 354.25px;
+    height: 145px;
+    color: #253529;
+    text-align: center;
+    font-size: 20px;
+    background: #ffffff;
+    padding: 15px;
+    gap: 10px;
+    border: 1px solid #f50c0c;
+    border-radius: 8px;
+}
+
+label[for="n-ordem-compra"] input {
+    width: 70px;
+    height: 25px;
+    color: #253529;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background: #ffffff;
+    border: 1px solid red;
+    padding: 10px 5px;
+    outline: none;
+}
+
+label[for="data-ordem-compra"] input {
+    width: 200px;
+    height: 25px;
+    color: #253529;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid red;
+    padding: 10px 20px;
+    outline: none;
+}
+
+label[for="data-ordem-compra"] input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.body-ordem-compra {
+    display: flex;
+    width: 724.5px;
+    height: 200px;
+    color: #253529;
+    font-size: 20px;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    gap: 16px;
+}
+
+.fornecedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 354.25px;
+    height: 200px;
+    color: #253529;
+    font-size: 20px;
+    background: #ffffff;
+    padding: 10px;
+    border: 1px solid #f50c0c;
+    border-radius: 8px;
+}
+
+.fornecedor-ordem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+label[for="fornecedor-ordem-compra"] {
+    display: flex;
+    color: #253529;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label[for="fornecedor-ordem-compra"] input {
+    width: 200px;
+    height: 20px;
+    color: #253529;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid red;
+    font-size: 16px;
+    padding: 0px;
+    outline: none;
+}
+
+label[for="endereco-fornecedor-ordem-compra"] input {
+    width: 200px;
+    height: 20px;
+    color: #253529;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid red;
+    font-size: 16px;
+    padding: 0px;
+    outline: none;
+}
+
+label[for="cidade-fornecedor-ordem-compra"] input {
+    width: 164px;
+    height: 20px;
+    color: #253529;
+    text-align: right;
+    background: #ffffff;
+    border: 1px solid red;
+    font-size: 16px;
+    padding: 0px;
+    outline: none;
+}
+
+label[for="estado-fornecedor-ordem-compra"] input {
+    width: 30px;
+    height: 20px;
+    color: #253529;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid red;
+    font-size: 16px;
+    padding: 0px;
+    outline: none;
+}
+
+label[for="cep-fornecedor-ordem-compra"] input {
+    width: 200px;
+    height: 20px;
+    color: #253529;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid red;
+    font-size: 16px;
+    padding: 0px;
+    outline: none;
 }
